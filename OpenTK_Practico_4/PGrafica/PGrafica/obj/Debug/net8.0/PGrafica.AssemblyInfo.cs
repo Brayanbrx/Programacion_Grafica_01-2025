@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PGrafica")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f84409ae38bac31d30adbcf7e0b8b6bb6f448e3f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ec2e6a4d299d05cb31813d43d9985846708dccc")]
 [assembly: System.Reflection.AssemblyProductAttribute("PGrafica")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PGrafica")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

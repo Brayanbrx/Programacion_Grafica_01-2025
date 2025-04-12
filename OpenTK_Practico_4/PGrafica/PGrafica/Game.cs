@@ -48,5 +48,17 @@ namespace PGrafica
             _shader.Dispose();
             base.OnUnload();
         }
+
+        protected override void OnUpdateFrame(FrameEventArgs e)
+        {
+            var input = KeyboardState;
+            float vel = 60f * (float)e.Time;   // grados por segundo
+
+            if (input.IsKeyDown(OpenTK.Windowing.GraphicsLibraryFramework.Keys.Left))
+                _escena.Objetos[0].Rotar(Vector3.UnitY, vel);  // izquierda → rota +
+            if (input.IsKeyDown(OpenTK.Windowing.GraphicsLibraryFramework.Keys.Right))
+                _escena.Objetos[0].Rotar(Vector3.UnitY, -vel);  // derecha → rota -
+        }
+
     }
 }
