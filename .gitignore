@@ -1,0 +1,21 @@
+# Archivos y carpetas de Visual Studio
+.vs/
+*.user
+*.suo
+*.vsidx
+
+# Archivos de compilación
+*.dll
+*.exe
+*.pdb
+*.cache
+*.obj
+*.bin
+*.csproj.nuget*
+/bin/
+/obj/
+
+# Archivos de sistema
+Thumbs.db
+.DS_Store
+
