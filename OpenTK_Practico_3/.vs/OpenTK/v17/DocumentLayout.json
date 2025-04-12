@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_SA_01-2025\\OpenTK_Practico_3\\",
+  "WorkspaceRootPath": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_01-2025\\OpenTK_Practico_3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B1B9341-3B1B-45A4-9319-CEA492CDF94C}|OpenTK\\OpenTK.csproj|c:\\users\\braya\\desktop\\practicas\\programacion_grafica_sa_01-2025\\opentk_practico_3\\opentk\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0B1B9341-3B1B-45A4-9319-CEA492CDF94C}|OpenTK\\OpenTK.csproj|c:\\users\\braya\\desktop\\practicas\\programacion_grafica_01-2025\\opentk_practico_3\\opentk\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B1B9341-3B1B-45A4-9319-CEA492CDF94C}|OpenTK\\OpenTK.csproj|solutionrelative:opentk\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B1B9341-3B1B-45A4-9319-CEA492CDF94C}|OpenTK\\OpenTK.csproj|c:\\users\\braya\\desktop\\practicas\\programacion_grafica_sa_01-2025\\opentk_practico_3\\opentk\\objeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0B1B9341-3B1B-45A4-9319-CEA492CDF94C}|OpenTK\\OpenTK.csproj|c:\\users\\braya\\desktop\\practicas\\programacion_grafica_01-2025\\opentk_practico_3\\opentk\\objeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B1B9341-3B1B-45A4-9319-CEA492CDF94C}|OpenTK\\OpenTK.csproj|solutionrelative:opentk\\objeto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B1B9341-3B1B-45A4-9319-CEA492CDF94C}|OpenTK\\OpenTK.csproj|c:\\users\\braya\\desktop\\practicas\\programacion_grafica_sa_01-2025\\opentk_practico_3\\opentk\\shader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0B1B9341-3B1B-45A4-9319-CEA492CDF94C}|OpenTK\\OpenTK.csproj|c:\\users\\braya\\desktop\\practicas\\programacion_grafica_01-2025\\opentk_practico_3\\opentk\\shader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B1B9341-3B1B-45A4-9319-CEA492CDF94C}|OpenTK\\OpenTK.csproj|solutionrelative:opentk\\shader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B1B9341-3B1B-45A4-9319-CEA492CDF94C}|OpenTK\\OpenTK.csproj|c:\\users\\braya\\desktop\\practicas\\programacion_grafica_sa_01-2025\\opentk_practico_3\\opentk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0B1B9341-3B1B-45A4-9319-CEA492CDF94C}|OpenTK\\OpenTK.csproj|c:\\users\\braya\\desktop\\practicas\\programacion_grafica_01-2025\\opentk_practico_3\\opentk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B1B9341-3B1B-45A4-9319-CEA492CDF94C}|OpenTK\\OpenTK.csproj|solutionrelative:opentk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -52,45 +52,48 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Objeto.cs",
-              "DocumentMoniker": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_SA_01-2025\\OpenTK_Practico_3\\OpenTK\\Objeto.cs",
+              "DocumentMoniker": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_01-2025\\OpenTK_Practico_3\\OpenTK\\Objeto.cs",
               "RelativeDocumentMoniker": "OpenTK\\Objeto.cs",
-              "ToolTip": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_SA_01-2025\\OpenTK_Practico_3\\OpenTK\\Objeto.cs",
+              "ToolTip": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_01-2025\\OpenTK_Practico_3\\OpenTK\\Objeto.cs",
               "RelativeToolTip": "OpenTK\\Objeto.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T02:16:46.617Z"
+              "WhenOpened": "2025-03-29T02:16:46.617Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Shader.cs",
-              "DocumentMoniker": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_SA_01-2025\\OpenTK_Practico_3\\OpenTK\\Shader.cs",
+              "DocumentMoniker": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_01-2025\\OpenTK_Practico_3\\OpenTK\\Shader.cs",
               "RelativeDocumentMoniker": "OpenTK\\Shader.cs",
-              "ToolTip": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_SA_01-2025\\OpenTK_Practico_3\\OpenTK\\Shader.cs",
+              "ToolTip": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_01-2025\\OpenTK_Practico_3\\OpenTK\\Shader.cs",
               "RelativeToolTip": "OpenTK\\Shader.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T23:26:48.949Z"
+              "WhenOpened": "2025-03-21T23:26:48.949Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_SA_01-2025\\OpenTK_Practico_3\\OpenTK\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_01-2025\\OpenTK_Practico_3\\OpenTK\\Program.cs",
               "RelativeDocumentMoniker": "OpenTK\\Program.cs",
-              "ToolTip": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_SA_01-2025\\OpenTK_Practico_3\\OpenTK\\Program.cs",
+              "ToolTip": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_01-2025\\OpenTK_Practico_3\\OpenTK\\Program.cs",
               "RelativeToolTip": "OpenTK\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T23:25:26.031Z"
+              "WhenOpened": "2025-03-21T23:25:26.031Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Game.cs",
-              "DocumentMoniker": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_SA_01-2025\\OpenTK_Practico_3\\OpenTK\\Game.cs",
+              "DocumentMoniker": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_01-2025\\OpenTK_Practico_3\\OpenTK\\Game.cs",
               "RelativeDocumentMoniker": "OpenTK\\Game.cs",
-              "ToolTip": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_SA_01-2025\\OpenTK_Practico_3\\OpenTK\\Game.cs",
+              "ToolTip": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_01-2025\\OpenTK_Practico_3\\OpenTK\\Game.cs",
               "RelativeToolTip": "OpenTK\\Game.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAYwCAAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

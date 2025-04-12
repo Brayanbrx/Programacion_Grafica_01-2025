@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6fiVWjwKe/g=",
+  "dgSpecHash": "5mvP8kvJgp4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_SA_01-2025\\OpenTK_Practico_3\\OpenTK\\OpenTK.csproj",
+  "projectFilePath": "C:\\Users\\braya\\Desktop\\Practicas\\Programacion_Grafica_01-2025\\OpenTK_Practico_3\\OpenTK\\OpenTK.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\braya\\.nuget\\packages\\opentk.core\\4.9.3\\opentk.core.4.9.3.nupkg.sha512",
     "C:\\Users\\braya\\.nuget\\packages\\opentk.graphics\\4.9.3\\opentk.graphics.4.9.3.nupkg.sha512",
