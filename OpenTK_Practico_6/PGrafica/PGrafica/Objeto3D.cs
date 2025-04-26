@@ -39,16 +39,28 @@ namespace PGrafica
         }
         public void Dibujar(Shader s, Matrix4 parentModel)
         {
-            Matrix4 model =
+            /* Matriz del objeto */
+            Matrix4 objModel =
                 Matrix4.CreateScale(FactorEscala) *
                 Matrix4.CreateRotationX(MathHelper.DegreesToRadians(RotacionEuler.X)) *
                 Matrix4.CreateRotationY(MathHelper.DegreesToRadians(RotacionEuler.Y)) *
                 Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(RotacionEuler.Z)) *
                 Matrix4.CreateTranslation(Posicion);
-            s.EstablecerMatriz4("model", parentModel * model);
-            foreach (var parte in Partes) parte.Dibujar(s);
+
+            /* Cada parte aplica su propia transformación */
+            foreach (var parte in Partes)
+            {
+                Matrix4 parteModel =
+                    Matrix4.CreateScale(parte.FactorEscala) *
+                    Matrix4.CreateRotationX(MathHelper.DegreesToRadians(parte.RotacionEuler.X)) *
+                    Matrix4.CreateRotationY(MathHelper.DegreesToRadians(parte.RotacionEuler.Y)) *
+                    Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(parte.RotacionEuler.Z)) *
+                    Matrix4.CreateTranslation(parte.Posicion);
+
+                s.EstablecerMatriz4("model", parentModel * objModel * parteModel);
+                parte.Dibujar(s);
+            }
         }
-        //public void Dibujar(Shader s) => Dibujar(s, Matrix4.Identity);
     }
 }
 

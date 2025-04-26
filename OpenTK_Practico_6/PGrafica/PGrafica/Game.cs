@@ -16,6 +16,7 @@ namespace PGrafica
         private Shader _shader = null!;
         private ImGuiController? _imgui = null!;
         private int _objSel = 0;  // Objeto seleccionado
+        private int _parteSel = 0;
         private int _modoTransform = 0; // 0 = Objeto, 1 = Escenario
         /* -------------------- cámara -------------------- */
         private VecTK _camPos = new(8f, 6f, 10f);
@@ -53,12 +54,6 @@ namespace PGrafica
             _escena = new Escenario();
             _escena = JsonSceneStore.LoadAuto(Path.Combine(SaveDir, "escena.json"))
             as Escenario ?? new Escenario();
-            //_escena.CrearObjetoEn(new VecTK(0, 0, 0))
-            //    .AgregarParte(new Parte(JsonSceneStore.LoadMesh("Models/u.json")));
-            //_escena.CrearObjetoEn(new VecTK(3, 1, 0))
-            //       .AgregarParte(new Parte(JsonSceneStore.LoadMesh("Models/u.json")));
-            //_escena.CrearObjetoEn(new VecTK(-3, 1, 0))
-            //       .AgregarParte(new Parte(JsonSceneStore.LoadMesh("Models/u.json")));
             _imgui = new ImGuiController(ClientSize.X, ClientSize.Y);
             ImGui.StyleColorsDark();
             this.TextInput += e =>
@@ -151,38 +146,74 @@ namespace PGrafica
         private void ShowObjetoControls()
         {
             if (_escena.Objetos.Count == 0) return;
-            /* Combo para elegir objeto -------------------------------- */
+
+            /* ────────── selector de Objeto ────────── */
             if (ImGui.BeginCombo("Seleccionar Objeto", $"Objeto {_objSel}"))
             {
                 for (int i = 0; i < _escena.Objetos.Count; i++)
                 {
                     bool sel = (i == _objSel);
-                    if (ImGui.Selectable($"Objeto {i}", sel)) _objSel = i;
+                    if (ImGui.Selectable($"Objeto {i}", sel)) { _objSel = i; _parteSel = 0; }
                     if (sel) ImGui.SetItemDefaultFocus();
                 }
                 ImGui.EndCombo();
             }
-            /* Sliders -------------------------------------------------- */
+
+            /* ────────── selector de Parte ────────── */
             var obj = _escena.Objetos[_objSel];
-            VecN pos = new(obj.Posicion.X, obj.Posicion.Y, obj.Posicion.Z);
-            VecN rot = new(obj.RotacionEuler.X, obj.RotacionEuler.Y, obj.RotacionEuler.Z);
-            VecN scl = new(obj.FactorEscala.X, obj.FactorEscala.Y, obj.FactorEscala.Z);
-            if (ImGui.SliderFloat3("Posición Objeto", ref pos, -10f, 10f))
-                obj.Posicion = new VecTK(pos.X, pos.Y, pos.Z);
-            if (ImGui.SliderFloat3("Rotación Objeto", ref rot, -180f, 180f))
-                obj.RotacionEuler = new VecTK(rot.X, rot.Y, rot.Z);
-            if (ImGui.SliderFloat3("Escala Objeto", ref scl, 0.1f, 5f))
-                obj.FactorEscala = new VecTK(scl.X, scl.Y, scl.Z);
-            /* Botón eliminar ------------------------------------------ */
+            if (obj.Partes.Count == 0) return;
+
+            if (ImGui.BeginCombo("Seleccionar Parte", $"Parte {_parteSel}"))
+            {
+                for (int i = 0; i < obj.Partes.Count; i++)
+                {
+                    bool sel = (i == _parteSel);
+                    if (ImGui.Selectable($"Parte {i}", sel)) _parteSel = i;
+                    if (sel) ImGui.SetItemDefaultFocus();
+                }
+                ImGui.EndCombo();
+            }
+
+            /* ────────── Sliders Objeto ────────── */
+            VecN oPos = new(obj.Posicion.X, obj.Posicion.Y, obj.Posicion.Z);
+            VecN oRot = new(obj.RotacionEuler.X, obj.RotacionEuler.Y, obj.RotacionEuler.Z);
+            VecN oScl = new(obj.FactorEscala.X, obj.FactorEscala.Y, obj.FactorEscala.Z);
+
+            if (ImGui.SliderFloat3("Posición Objeto", ref oPos, -10f, 10f))
+                obj.Posicion = new VecTK(oPos.X, oPos.Y, oPos.Z);
+            if (ImGui.SliderFloat3("Rotación Objeto", ref oRot, -180f, 180f))
+                obj.RotacionEuler = new VecTK(oRot.X, oRot.Y, oRot.Z);
+            if (ImGui.SliderFloat3("Escala Objeto", ref oScl, 0.1f, 5f))
+                obj.FactorEscala = new VecTK(oScl.X, oScl.Y, oScl.Z);
+
+            ImGui.Separator();
+
+            /* ────────── Sliders Parte ────────── */
+            var parte = obj.Partes[_parteSel];
+
+            VecN pPos = new(parte.Posicion.X, parte.Posicion.Y, parte.Posicion.Z);
+            VecN pRot = new(parte.RotacionEuler.X, parte.RotacionEuler.Y, parte.RotacionEuler.Z);
+            VecN pScl = new(parte.FactorEscala.X, parte.FactorEscala.Y, parte.FactorEscala.Z);
+
+            if (ImGui.SliderFloat3("Posición Parte", ref pPos, -10f, 10f))
+                parte.Posicion = new VecTK(pPos.X, pPos.Y, pPos.Z);
+            if (ImGui.SliderFloat3("Rotación Parte", ref pRot, -180f, 180f))
+                parte.RotacionEuler = new VecTK(pRot.X, pRot.Y, pRot.Z);
+            if (ImGui.SliderFloat3("Escala Parte", ref pScl, 0.1f, 5f))
+                parte.FactorEscala = new VecTK(pScl.X, pScl.Y, pScl.Z);
+
+            ImGui.Separator();
+
+            /* ────────── Botón eliminar Objeto ────────── */
             if (ImGui.Button("Eliminar Objeto"))
             {
                 _escena.QuitarObjeto(_objSel);
-                _objSel = _escena.Objetos.Count > 0
-                          ? Math.Clamp(_objSel, 0, _escena.Objetos.Count - 1)
-                          : 0;
+                _objSel = _escena.Objetos.Count > 0 ? Math.Clamp(_objSel, 0, _escena.Objetos.Count - 1) : 0;
+                _parteSel = 0;
                 ShowStatus("Objeto eliminado");
             }
         }
+
         private void ShowEscenarioControls()
         {
             VecN escPos = new(_escena.Posicion.X, _escena.Posicion.Y, _escena.Posicion.Z);
