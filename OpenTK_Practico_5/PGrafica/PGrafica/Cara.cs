@@ -5,8 +5,8 @@ namespace PGrafica
 {
     public class Cara : IDisposable // Reserva Recursos en la GPU que deben ser liberados Dispose
     {
-        public List<Vector3> Vertices { get; } = new(); // lista de vertices, puntos 3D
-        public List<int>     Indices { get; } = new();  // lista de indices que conectan vertices
+        public List<Vector3> Vertices { get; } = new();
+        public List<int>     Indices { get; } = new();
         private int _vao, _vbo, _ebo; // Vertex Array, Vertex Buffer y Element Buffer
         private bool _inicializada;
         public Cara(IEnumerable<Vector3> vertices, IEnumerable<int> indices)
@@ -16,9 +16,9 @@ namespace PGrafica
         }
         internal void Dibujar(Shader shader)
         {
-            if (!_inicializada) InicializarBuffers(); // Si aun no se subio la info al GPU
+            if (!_inicializada) InicializarBuffers(); 
             GL.BindVertexArray(_vao);                 // Seleccion de Buffers
-            GL.DrawElements(PrimitiveType.Triangles,  // Dibujamos los triangulos con los indices
+            GL.DrawElements(PrimitiveType.Triangles,
                 Indices.Count, DrawElementsType.UnsignedInt, 0);
         }
         public void InicializarBuffers()

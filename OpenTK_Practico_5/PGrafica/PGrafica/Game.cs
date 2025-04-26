@@ -4,7 +4,6 @@ using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
 using ImGuiNET;
 using PGrafica.Persistencia;
-
 using VecTK = OpenTK.Mathematics.Vector3;
 using VecN = System.Numerics.Vector3;
 using OpenTK.Windowing.GraphicsLibraryFramework;
@@ -103,9 +102,8 @@ namespace PGrafica
         protected override void OnRenderFrame(FrameEventArgs e)
         {
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);  
-            Matrix4 vista = Matrix4.LookAt(_camPos, _camTarget, _camUp); // Actualizar vista de cámara
+            Matrix4 vista = Matrix4.LookAt(_camPos, _camTarget, _camUp);
             _shader.EstablecerMatriz4("view", vista);
-            // Activar Shader y Dibujar
             _shader.Usar(); 
             _escena.Dibujar(_shader); 
             // Interfaz IMGUI
@@ -143,7 +141,7 @@ namespace PGrafica
             if (ImGui.Button("Limpiar escena"))
             {
                 _escena.Limpiar();
-                _objSel = -1;     // sin seleccion
+                _objSel = 0;     // sin seleccion
             }   
             ImGui.Separator();    // Guardar
             ImGui.Text("Guardar:");

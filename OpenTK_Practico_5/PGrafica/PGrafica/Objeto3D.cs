@@ -17,9 +17,6 @@ namespace PGrafica
         }
         public void AgregarParte(Parte p) => Partes.Add(p);
         public void QuitarParte(Parte p)  => Partes.Remove(p);
-      /*public void Trasladar(Vector3 d) => Posicion += d;
-        public void Rotar(Vector3 axis, float deg) => RotacionEuler += axis * deg;
-        public void Escalar(Vector3 f) => FactorEscala *= f; */
         public void Dibujar(Shader shader)
         {
         Matrix4 modelo =
