@@ -4,7 +4,7 @@
     {
         static void Main()
         {
-            using var juego = new Game(800, 600, "Instancias de U PGrafica");
+            using var juego = new Game(800, 600, "NoOo La Politcia");
             juego.Run();
         }
     }

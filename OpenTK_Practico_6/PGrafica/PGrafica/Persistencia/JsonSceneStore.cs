@@ -10,12 +10,20 @@ namespace PGrafica.Persistencia
             PropertyNameCaseInsensitive = true
         };
         /* ----------------------- Guardar ----------------------- */
-        public static void Save(Escenario e, string path) =>
-            File.WriteAllText(path, JsonSerializer.Serialize(e.ToDto(), Opt));
-        public static void Save(Objeto3D o, string path) =>
-            File.WriteAllText(path, JsonSerializer.Serialize(o.ToDto(), Opt));
-        public static void Save(Cara c, string path) =>
-            File.WriteAllText(path, JsonSerializer.Serialize(c.ToDto(), Opt));
+        public static void Save<T>(T data, string path)
+        {
+            object dto = data switch
+            {
+                Escenario esc => esc.ToDto(),
+                Objeto3D obj => obj.ToDto(),
+                Cara car => car.ToDto(),
+                _ => throw new NotSupportedException(
+                         $"No sé serializar objetos de tipo {typeof(T).Name}")
+            };
+
+            File.WriteAllText(path, JsonSerializer.Serialize(dto, Opt));
+        }
+
         /* ----------------------- Cargar ------------------------ */
         public static object LoadAuto(string path)
         {

@@ -61,6 +61,11 @@ namespace PGrafica
             //       .AgregarParte(new Parte(JsonSceneStore.LoadMesh("Models/u.json")));
             _imgui = new ImGuiController(ClientSize.X, ClientSize.Y);
             ImGui.StyleColorsDark();
+            this.TextInput += e =>
+            {
+                if (e.Unicode != 0)
+                    _imgui?.PressChar((char)e.Unicode);
+            };
             RefreshFileList();
         }
         protected override void OnResize(ResizeEventArgs e)

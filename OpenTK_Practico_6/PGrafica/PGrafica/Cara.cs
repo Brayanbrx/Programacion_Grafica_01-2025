@@ -7,17 +7,17 @@ namespace PGrafica
 {
     public class Cara : IDisposable
     {
-        public List<Vector3> Vertices { get; } = new();
+        public List<Vector3> Vertices { get; } = new(); //3D x,y,z
         public List<int> Indices { get; } = new();
-        [JsonIgnore] private int _vao, _vbo, _ebo;
-        [JsonIgnore] private bool _inicializada;
+        [JsonIgnore] private int _vao, _vbo, _ebo; // id de buffers en GPU confi, vertices, indices
+        [JsonIgnore] private bool _inicializada; // flag
         public Cara() { }
         public Cara(IEnumerable<Vector3> v, IEnumerable<int> idx)
         {
             Vertices.AddRange(v); Indices.AddRange(idx);
         }
-        public readonly record struct Dto(float[][] vertices, int[] indices);
-        public Dto ToDto() => new(Vertices.Select(p => new[] { p.X, p.Y, p.Z }).ToArray(),
+        public readonly record struct Dto(float[][] vertices, int[] indices); // Data Transfer Object
+        public Dto ToDto() => new(Vertices.Select(p => new[] { p.X, p.Y, p.Z }).ToArray(), //Jsonfriendly xd
                                     Indices.ToArray());
         public static Cara FromDto(Dto d)
         {
